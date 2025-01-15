@@ -9,20 +9,25 @@
   <body>
     <!-- Header Section -->
     <header>
-      <div class="logo">
-        <img src="./src/logo-removebg-preview.png" alt="AlanVerse Logo" />
-        <h1>AlanVerse</h1>
-      </div>
-      <nav>
-        <ul>
-          <li><a href="#hero">Home</a></li>
-          <li><a href="#movies">Movies</a></li>
-          <li><a href="#series">Series</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </nav>
-    </header>
+        <div class="logo">
+          <img src="./src/logo-removebg-preview.png" alt="AlanVerse Logo" />
+          <h1>AlanVerse</h1>
+        </div>
+        <nav>
+          <ul>
+            <li><a href="#hero">Home</a></li>
+            <li><a href="#movies">Movies</a></li>
+            <li><a href="#series">Series</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+        <div class="user-account">
+          <img src="./src/avatar.png" alt="Avatar" />
+          <span>Invitado</span>
+        </div>
+      </header>
+      
 
     <!-- Hero Section -->
     <section id="hero">
@@ -74,6 +79,17 @@
                 });
             });
         });
+
+        window.addEventListener('scroll', function () {
+        const moviesSection = document.querySelector('#movies');
+        const sectionPosition = moviesSection.getBoundingClientRect().top;
+        const screenPosition = window.innerHeight / 1.3;
+
+        if (sectionPosition < screenPosition) {
+            moviesSection.classList.add('visible');
+        }
+    });
+
     </script>
     
   </body>

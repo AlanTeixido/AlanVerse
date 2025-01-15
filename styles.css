@@ -49,6 +49,25 @@ nav ul li a:hover {
     color: #ff4500;
 }
 
+.user-account {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 14px;
+    color: #cccccc;
+    margin-right: 20px;
+}
+
+.user-account img {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    border: 1px solid #ff4500;
+    object-fit: cover;
+}
+
+
+
 #hero {
     height: 100vh;
     display: flex;
@@ -108,16 +127,30 @@ nav ul li a:hover {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+.btn {
+    border-radius: 30px;
+}
+
+
 .btn:hover {
     transform: scale(1.1);
     box-shadow: 0 10px 20px rgba(255, 69, 0, 0.5);
 }
 
 #movies {
+    min-height: 100vh;
     padding: 60px 20px;
     text-align: center;
     background-color: #151515;
     color: white;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+#movies.visible {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 #movies h3 {
