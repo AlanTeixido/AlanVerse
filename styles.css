@@ -5,20 +5,31 @@ body, h1, h2, h3, p, ul, li, a, img {
     box-sizing: border-box;
 }
 
+/* Body */
 body {
     font-family: 'Arial', sans-serif;
     background-color: #101010;
-    color: #ffffff;
+    color: white;
     line-height: 1.6;
 }
 
+/* Header */
 header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 20px;
-    background-color: #1a1a1a;
-    border-bottom: 2px solid #ff4500;
+    background-color: transparent;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    transition: background-color 0.3s ease;
+}
+
+header.scrolled {
+    background-color: rgba(26, 26, 26, 0.9); /* Fondo oscuro cuando se desplaza */
 }
 
 .logo img {
@@ -28,7 +39,6 @@ header {
 }
 
 .logo h1 {
-    display: inline-block;
     font-size: 24px;
     color: #ff4500;
 }
@@ -40,7 +50,7 @@ nav ul {
 }
 
 nav ul li a {
-    color: #ffffff;
+    color: white;
     text-decoration: none;
     font-size: 16px;
 }
@@ -66,8 +76,7 @@ nav ul li a:hover {
     object-fit: cover;
 }
 
-
-
+/* Hero Section */
 #hero {
     height: 100vh;
     display: flex;
@@ -100,7 +109,6 @@ nav ul li a:hover {
     padding: 20px;
 }
 
-
 .hero-content h2 {
     font-size: 48px;
     margin-bottom: 10px;
@@ -131,26 +139,18 @@ nav ul li a:hover {
     border-radius: 30px;
 }
 
-
 .btn:hover {
     transform: scale(1.1);
     box-shadow: 0 10px 20px rgba(255, 69, 0, 0.5);
 }
 
+/* Movies Section */
 #movies {
-    min-height: 100vh;
     padding: 60px 20px;
     text-align: center;
     background-color: #151515;
     color: white;
-    opacity: 0;
-    transform: translateY(50px);
-    transition: opacity 0.6s ease, transform 0.6s ease;
-}
-
-#movies.visible {
-    opacity: 1;
-    transform: translateY(0);
+    overflow: hidden; /* Esto ocultará cualquier contenido que sobresalga */
 }
 
 #movies h3 {
@@ -159,31 +159,69 @@ nav ul li a:hover {
     color: #ff4500;
 }
 
-
-#gallery h3 {
-    font-size: 32px;
-    margin-bottom: 20px;
-}
-
+/* Cuadrícula de Películas */
 .gallery-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: repeat(4, 1fr);
     gap: 20px;
+    width: 100%;
+    max-width: 100%; /* Garantiza que no haya desbordamiento */
+    margin: 0 auto;
+    overflow: hidden; /* Se asegura de que no se vea el scroll */
 }
 
 .card {
     background-color: #1a1a1a;
-    padding: 20px;
     border: 2px solid #ff4500;
     border-radius: 5px;
     text-align: center;
+    padding: 10px;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.card img {
+    width: 100%;
+    height: auto;
+    max-width: 100%; /* Esto hace que la imagen no se desborde */
+    border-radius: 5px;
+}
+
+.card h4 {
+    font-size: 18px;
+    margin-top: 10px;
 }
 
 .card:hover {
     background-color: #ff4500;
-    color: #ffffff;
+    color: white;
+    transform: scale(1.05);
 }
 
+.card:hover img {
+    transform: scale(1.1);
+}
+
+/* Responsividad para pantallas pequeñas */
+@media (max-width: 1024px) {
+    .gallery-grid {
+        grid-template-columns: repeat(3, 1fr); /* 3 columnas */
+    }
+}
+
+@media (max-width: 768px) {
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 columnas */
+    }
+}
+
+@media (max-width: 480px) {
+    .gallery-grid {
+        grid-template-columns: 1fr; /* 1 columna */
+    }
+}
+
+
+/* Footer */
 footer {
     padding: 20px;
     text-align: center;
@@ -205,7 +243,7 @@ footer p {
 .social-icons a img {
     width: 40px;
     height: 40px;
-    transition: transform 0.3s;
+    transition: transform 0.3s ease;
 }
 
 .social-icons a img:hover {
