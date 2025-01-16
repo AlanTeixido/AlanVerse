@@ -19,17 +19,18 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 20px;
-    background-color: transparent;
+    background: linear-gradient(90deg, #1a1a1a, #2b2b2b);
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
     z-index: 1000;
     transition: background-color 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
 }
 
 header.scrolled {
-    background-color: rgba(26, 26, 26, 0.9); /* Fondo oscuro cuando se desplaza */
+    background: linear-gradient(90deg, #222222, #333333);
 }
 
 .logo img {
@@ -53,27 +54,41 @@ nav ul li a {
     color: white;
     text-decoration: none;
     font-size: 16px;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
 }
 
 nav ul li a:hover {
-    color: #ff4500;
+    background-color: #ff4500;
+    color: #ffffff;
 }
 
 .user-account {
     display: flex;
     align-items: center;
-    gap: 6px;
+    gap: 10px;
     font-size: 14px;
     color: #cccccc;
-    margin-right: 20px;
+    padding: 10px 15px;
+    border: 1px solid #ff4500;
+    border-radius: 30px;
+    background: linear-gradient(90deg, #2b2b2b, #1a1a1a);
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
 }
 
 .user-account img {
-    width: 24px;
-    height: 24px;
+    width: 30px;
+    height: 30px;
     border-radius: 50%;
     border: 1px solid #ff4500;
     object-fit: cover;
+}
+
+.user-account:hover {
+    box-shadow: 0 4px 10px rgba(255, 69, 0, 0.4);
+    transform: scale(1.05);
+    cursor: pointer;
 }
 
 /* Hero Section */
@@ -128,15 +143,11 @@ nav ul li a:hover {
     color: #ffffff;
     text-transform: uppercase;
     text-decoration: none;
-    background: linear-gradient(90deg, #ff7a00, #ff4500);
+    background: linear-gradient(90deg, #a85858, #ff4500);
     border: none;
     border-radius: 50px;
     cursor: pointer;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.btn {
-    border-radius: 30px;
 }
 
 .btn:hover {
@@ -150,7 +161,7 @@ nav ul li a:hover {
     text-align: center;
     background-color: #151515;
     color: white;
-    overflow: hidden; /* Esto ocultará cualquier contenido que sobresalga */
+    overflow: hidden;
 }
 
 #movies h3 {
@@ -165,9 +176,9 @@ nav ul li a:hover {
     grid-template-columns: repeat(4, 1fr);
     gap: 20px;
     width: 100%;
-    max-width: 100%; /* Garantiza que no haya desbordamiento */
+    max-width: 100%;
     margin: 0 auto;
-    overflow: hidden; /* Se asegura de que no se vea el scroll */
+    overflow: hidden;
 }
 
 .card {
@@ -182,7 +193,7 @@ nav ul li a:hover {
 .card img {
     width: 100%;
     height: auto;
-    max-width: 100%; /* Esto hace que la imagen no se desborde */
+    max-width: 100%;
     border-radius: 5px;
 }
 
@@ -204,25 +215,25 @@ nav ul li a:hover {
 /* Responsividad para pantallas pequeñas */
 @media (max-width: 1024px) {
     .gallery-grid {
-        grid-template-columns: repeat(3, 1fr); /* 3 columnas */
+        grid-template-columns: repeat(3, 1fr);
     }
 }
 
 @media (max-width: 768px) {
     .gallery-grid {
-        grid-template-columns: repeat(2, 1fr); /* 2 columnas */
+        grid-template-columns: repeat(2, 1fr);
     }
 }
 
 @media (max-width: 480px) {
     .gallery-grid {
-        grid-template-columns: 1fr; /* 1 columna */
+        grid-template-columns: 1fr;
     }
 }
 
-
 /* Footer */
 footer {
+    color: #ff4500;
     padding: 20px;
     text-align: center;
     background-color: #1a1a1a;
