@@ -4,39 +4,42 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>AlanVerse</title>
-    <link rel="shortcut icon" type="image/png" href="./src/logo-removebg-preview.png" />
+    <link
+      rel="shortcut icon"
+      type="image/png"
+      href="./src/logo-removebg-preview.png"
+    />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
     <!-- Header Section -->
     <header>
-        <div class="logo">
-          <img src="./src/logo-removebg-preview.png" alt="AlanVerse Logo" />
-          <h1>AlanVerse</h1>
-        </div>
-        <nav>
-          <ul>
-            <li><a href="./home.html">Home</a></li>
-            <li><a href="#movies">Movies</a></li>
-            <li><a href="#series">Series</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#contact">Contact</a></li>
-          </ul>
-        </nav>
-        <div class="user-account">
-          <img src="./src/avatar.png" alt="Avatar" />
-          <span>Invitado</span>
-        </div>
-      </header>
-      
+      <div class="logo">
+        <img src="./src/logo-removebg-preview.png" alt="AlanVerse Logo" />
+        <h1>AlanVerse</h1>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="#hero">Home</a></li>
+          <li><a href="#movies">Movies</a></li>
+          <li><a href="#series-section">Series</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="user-account">
+        <img src="./src/avatar.png" alt="Avatar" />
+        <span>Invitado</span>
+      </div>
+    </header>
 
     <!-- Hero Section -->
     <section id="hero">
-      <video autoplay muted playsinline id="hero-video">
+      <video autoplay muted loop playsinline id="hero-video">
         <source src="./src/entrada.mp4" type="video/mp4" />
         Your browser does not support the video tag.
       </video>
-      <div class="hero-content" id="hero-content">
+      <div class="hero-content">
         <h2>Explore Your Universe</h2>
         <p>
           Discover an infinite world of movies and series curated just for you.
@@ -47,31 +50,56 @@
 
     <!-- Movies Section -->
     <section id="movies">
-        <h3>Featured Movie Content</h3>
-        <div class="gallery-grid">
-            <div class="card">
-                <img src="./src/pelicula1.png" alt="Movie 1">
-                <h4>Superman</h4>
-                <a href="/movieDetail.html" class="btn-detail">View Details</a>
-            </div>
-            <div class="card">
-                <img src="./src/pelicula2.jpg" alt="Movie 2">
-                <h4>Batman</h4>
-                <a href="/movieDetail.html" class="btn-detail">View Details</a>
-            </div>
-            <div class="card">
-                <img src="./src/pelicula3.jpg" alt="Movie 3">
-                <h4>Robin</h4>
-                <a href="/movieDetail.html" class="btn-detail">View Details</a>
-            </div>
-            <div class="card">
-                <img src="./src/pelicula4.jpg" alt="Movie 4">
-                <h4>Spiderman</h4>
-                <a href="/movieDetail.html" class="btn-detail">View Details</a>
-            </div>
+      <h3>Featured Movie Content</h3>
+      <div class="gallery-grid">
+        <div class="card">
+          <img src="./src/pelicula1.png" alt="Movie 1" />
+          <h4>Superman</h4>
+          <a href="/movieDetail.html" class="btn-detail">View Details</a>
         </div>
+        <div class="card">
+          <img src="./src/pelicula2.jpg" alt="Movie 2" />
+          <h4>Batman</h4>
+          <a href="/movieDetail.html" class="btn-detail">View Details</a>
+        </div>
+        <div class="card">
+          <img src="./src/pelicula3.jpg" alt="Movie 3" />
+          <h4>Robin</h4>
+          <a href="/movieDetail.html" class="btn-detail">View Details</a>
+        </div>
+        <div class="card">
+          <img src="./src/pelicula4.jpg" alt="Movie 4" />
+          <h4>Spiderman</h4>
+          <a href="/movieDetail.html" class="btn-detail">View Details</a>
+        </div>
+      </div>
     </section>
-    
+
+<!-- Series Section -->
+<section id="series-section">
+  <h3>Featured Series Content</h3>
+  <div class="gallery-grid series">
+    <div class="card">
+      <img src="./src/darknight.jpg" alt="The Dark Knight Series" />
+      <h4>The Dark Knight</h4>
+      <p class="description">Action, Thriller</p>
+      <a href="/seriesDetail.html" class="btn-detail">View Details</a>
+    </div>
+    <div class="card">
+      <img src="./src/breakingbad.jpeg" alt="Breaking Bad" />
+      <h4>Breaking Bad</h4>
+      <p class="description">Drama, Crime</p>
+      <a href="/seriesDetail.html" class="btn-detail">View Details</a>
+    </div>
+    <div class="card">
+      <img src="./src/gamethrones.jpg" alt="Game of Thrones" />
+      <h4>Game of Thrones</h4>
+      <p class="description">Fantasy, Drama</p>
+      <a href="/seriesDetail.html" class="btn-detail">View Details</a>
+    </div>
+  </div>
+</section>
+
 
     <!-- Footer Section -->
     <footer>
@@ -83,32 +111,27 @@
       </div>
     </footer>
 
-
-
-
     <script>
-        // Agrega desplazamiento suave a todos los enlaces internos
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                target.scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
+      // Agrega desplazamiento suave a todos los enlaces internos
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+          const target = document.querySelector(this.getAttribute("href"));
+          target.scrollIntoView({
+            behavior: "smooth",
+          });
         });
+      });
 
-        window.addEventListener('scroll', function () {
-        const moviesSection = document.querySelector('#movies');
+      window.addEventListener("scroll", function () {
+        const moviesSection = document.querySelector("#movies");
         const sectionPosition = moviesSection.getBoundingClientRect().top;
         const screenPosition = window.innerHeight / 1.3;
 
         if (sectionPosition < screenPosition) {
-            moviesSection.classList.add('visible');
+          moviesSection.classList.add("visible");
         }
-    });
-
+      });
     </script>
-    
   </body>
 </html>
