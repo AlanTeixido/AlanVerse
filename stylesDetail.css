@@ -13,7 +13,6 @@ body {
     line-height: 1.6;
 }
 
-
 /* Footer */
 footer {
     color: #ff4500;
@@ -43,62 +42,55 @@ footer p {
 .social-icons a img:hover {
     transform: scale(1.2);
 }
-
-
-
 /* Header */
 header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 20px;
+    padding: 20px;
     background: linear-gradient(90deg, #1a1a1a, #2b2b2b);
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
     z-index: 1000;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    transition: background-color 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
 }
 
-.logo {
-    display: flex;
-    align-items: center;
-    gap: 10px;
+header.scrolled {
+    background: linear-gradient(90deg, #222222, #333333);
 }
 
 .logo img {
-    width: 40px;
+    width: 50px;
     height: auto;
-    border-radius: 50%;
+    margin-right: 10px;
 }
 
 .logo h1 {
-    font-size: 20px;
+    font-size: 24px;
     color: #ff4500;
-    margin: 0;
 }
 
 nav ul {
     list-style: none;
     display: flex;
     gap: 15px;
-    margin: 0;
-    padding: 0;
 }
 
 nav ul li a {
     color: white;
     text-decoration: none;
     font-size: 16px;
-    padding: 5px 10px;
+    padding: 10px 15px;
     border-radius: 5px;
     transition: background-color 0.3s, color 0.3s;
 }
 
 nav ul li a:hover {
     background-color: #ff4500;
-    color: white;
+    color: #ffffff;
 }
 
 .user-account {
@@ -106,93 +98,125 @@ nav ul li a:hover {
     align-items: center;
     gap: 10px;
     font-size: 14px;
-    color: white;
+    color: #cccccc;
+    padding: 10px 15px;
+    border: 1px solid #ff4500;
+    border-radius: 30px;
+    background: linear-gradient(90deg, #2b2b2b, #1a1a1a);
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
 }
 
 .user-account img {
-    width: 35px;
-    height: 35px;
+    width: 30px;
+    height: 30px;
     border-radius: 50%;
-    border: 2px solid #ff4500;
+    border: 1px solid #ff4500;
+    object-fit: cover;
 }
 
-.user-account span {
-    color: #cccccc;
+.user-account:hover {
+    box-shadow: 0 4px 10px rgba(255, 69, 0, 0.4);
+    transform: scale(1.05);
+    cursor: pointer;
 }
-
 
 /* Movie Detail Section */
 #movie-detail {
     margin-top: 100px;
+    position: relative;
 }
 
 .detail-container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 20px;
+    position: relative;
 }
 
 .movie-banner {
-    width: 70%;
+    width: 100%;
     height: auto;
     object-fit: cover;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
 }
 
+/* Title Overlay */
 .movie-title-overlay {
-    width: 25%;
-    padding: 20px;
-    color: white;
-    background: rgba(0, 0, 0, 0.7);
+    position: absolute;
+    bottom: 20%; /* Ajustado para estar encima del video */
+    left: 5%; /* Ajuste horizontal */
+    transform: translateY(50%);
+    background: rgba(0, 0, 0, 0.8); /* Fondo semitransparente */
+    padding: 10px 20px;
     border-radius: 10px;
-    text-align: center;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
 }
 
 .movie-title-overlay h2 {
     font-size: 36px;
     color: #ff4500;
-    margin-bottom: 15px;
+    margin: 0;
 }
 
-/* More Details Section */
+/* Más detalles - Estilo */
 #more-details {
     padding: 40px 20px;
     background: #101010;
     color: white;
+    border-top: 2px solid #ff4500;
+    margin-top: 20px;
 }
 
 #more-details h3 {
     text-align: center;
-    margin-bottom: 20px;
-    font-size: 24px;
+    font-size: 28px;
     color: #ff4500;
+    margin-bottom: 30px;
+    text-transform: uppercase;
 }
 
 .details-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 20px;
+    justify-content: center;
 }
 
-.details-grid .card {
+.card {
     background: #1a1a1a;
     padding: 20px;
     border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
     text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.details-grid .card h4 {
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(255, 69, 0, 0.5);
+}
+
+.card-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.card-icon img {
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+}
+
+.card h4 {
     font-size: 20px;
-    margin-bottom: 10px;
     color: #ff4500;
+    margin-bottom: 10px;
 }
 
-.details-grid .card p {
+.card p {
+    font-size: 14px;
     color: #cccccc;
+    margin-bottom: 5px;
 }
 
 /* Related Content Section */
