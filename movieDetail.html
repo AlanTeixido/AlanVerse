@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>AlanVerse</title>
-    <link rel="shortcut icon" type="image/png" href="./src/logo-removebg-preview.png" />
-    <link rel="stylesheet" href="styles.css" />
-  </head>
-  <body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spider-Man: Lejos de Casa</title>
+    <link rel="stylesheet" href="stylesDetail.css">
+    <link rel="shortcut icon" type="image/png" href="./src/logo-removebg-preview.png">
+</head>
+<body>
     <!-- Header Section -->
     <header>
         <div class="logo">
@@ -16,7 +16,7 @@
         </div>
         <nav>
           <ul>
-            <li><a href="#hero">Home</a></li>
+            <li><a href="./home.html">Home</a></li>
             <li><a href="#movies">Movies</a></li>
             <li><a href="#series">Series</a></li>
             <li><a href="#about">About</a></li>
@@ -28,52 +28,74 @@
           <span>Invitado</span>
         </div>
       </header>
-      
 
-    <!-- Detail section -->
-      <div class="movie-detail">
-        
-      </div>
-      
+    <!-- Movie Detail Section -->
+    <section id="movie-detail">
+        <div class="detail-container">
+            <!-- Video Banner -->
+            <video autoplay muted loop playsinline class="movie-banner">
+                <source src="./src/spiderman.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
 
-    <!-- Hero Section -->
+            <!-- Title Overlay -->
+            <div class="movie-title-overlay">
+                <h2>Spider-Man: Lejos de Casa</h2>
+            </div>
+        </div>
+
+        <!-- Movie Info Section -->
+        <div class="movie-info-section">
+            <h2>Spider-Man: Lejos de Casa</h2>
+            <p>2019 • +7 • Acción</p>
+            <p>
+                Los superhéroes también necesitan vacaciones. Pero una nueva amenaza obliga a Peter Parker
+                a pasar a la acción durante un viaje de estudios a Europa.
+            </p>
+            <p><strong>Protagonizada por:</strong> Tom Holland, Zendaya, Samuel L. Jackson</p>
+        </div>
+
+        <!-- More Details Section -->
+        <section id="more-details">
+            <h3>Más detalles</h3>
+            <div class="details-grid">
+                <div class="card">
+                    <h4>Ver sin conexión</h4>
+                    <p>Disponible para descargar</p>
+                    <p><strong>Géneros:</strong> Ciencia Ficción, Acción</p>
+                </div>
+                <div class="card">
+                    <h4>Audio</h4>
+                    <p>Alemán, Inglés, Español, Francés</p>
+                    <p><strong>Subtítulos:</strong> Español, Francés, Alemán</p>
+                </div>
+                <div class="card">
+                    <h4>Reparto</h4>
+                    <p>Tom Holland, Zendaya, Samuel L. Jackson</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Related Content Section -->
+        <section id="related-content">
+            <h3>También puede que te guste</h3>
+            <div class="related-grid">
+                <img src="./src/spiderman-homecoming.jpg" alt="Spider-Man Homecoming">
+                <img src="./src/venom.jpeg" alt="Venom">
+                <img src="./src/aquaman.jpg" alt="Aquaman">
+                <img src="./src/justice-league.jpg" alt="Justice League">
+            </div>
+        </section>
+    </section>
 
     <!-- Footer Section -->
     <footer>
-      <p>&copy; 2025 AlanVerse. All rights reserved.</p>
-      <div class="social-icons">
-        <a href="#"><img src="./src/instagram.png" /></a>
-        <a href="#"><img src="./src/twitter.png" /></a>
-        <a href="#"><img src="./src/linkedin.png" /></a>
-      </div>
+        <p>&copy; 2025 AlanVerse. All rights reserved.</p>
+        <div class="social-icons">
+            <a href="#"><img src="./src/instagram.png"></a>
+            <a href="#"><img src="./src/twitter.png"></a>
+            <a href="#"><img src="./src/linkedin.png"></a>
+        </div>
     </footer>
-
-
-
-
-    <script>
-        // Agrega desplazamiento suave a todos los enlaces internos
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                target.scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
-        });
-
-        window.addEventListener('scroll', function () {
-        const moviesSection = document.querySelector('#movies');
-        const sectionPosition = moviesSection.getBoundingClientRect().top;
-        const screenPosition = window.innerHeight / 1.3;
-
-        if (sectionPosition < screenPosition) {
-            moviesSection.classList.add('visible');
-        }
-    });
-
-    </script>
-    
-  </body>
+</body>
 </html>
