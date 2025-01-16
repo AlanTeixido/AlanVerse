@@ -250,3 +250,49 @@ nav ul li a:hover {
 .related-grid img:hover {
     transform: scale(1.05);
 }
+
+.movie-info-section {
+    background: linear-gradient(90deg, #1a1a1a, #2b2b2b);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    color: white;
+  }
+  
+  .movie-title {
+    font-size: 32px;
+    color: #ff4500;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+  }
+  
+  .movie-details {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    font-size: 14px;
+    color: #cccccc;
+    margin-bottom: 20px;
+  }
+  
+  .movie-details i {
+    margin-right: 5px;
+    color: #ff4500;
+  }
+  
+  .movie-description {
+    font-size: 16px;
+    color: #cccccc;
+    margin-bottom: 20px;
+  }
+  
+  .movie-cast {
+    font-size: 14px;
+    color: #cccccc;
+  }
+  
+  .movie-cast strong {
+    color: #ff4500;
+  }
+  
